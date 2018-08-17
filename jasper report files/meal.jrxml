@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="meal" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4593b1a4-3a9d-48ba-8097-7b0d4406d67b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/Users/eduardosoares/coma certo/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="INITIAL_DATE" class="java.util.Date"/>
+	<parameter name="FINAL_DATE" class="java.util.Date"/>
+	<field name="date" class="java.util.Date"/>
+	<field name="meals" class="java.util.List"/>
+	<title>
+		<band height="86" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="46" forecolor="#3333FF" backcolor="#99FFFF" uuid="b03d7737-ea89-492f-b6d1-cc5c47860838"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório Alimentar]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="66" width="53" height="20" uuid="ab1c3b8d-d395-4d60-a890-39f9b6507a9e"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Até:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="46" width="53" height="20" uuid="792ce4e4-54d0-436f-ad94-6d1d307430be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[De:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="53" y="46" width="111" height="20" uuid="ef51734e-55b5-46f3-916b-ea2c34b24b3f"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($P{INITIAL_DATE})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="53" y="66" width="111" height="20" uuid="8ece2995-c8ec-4df3-8528-f0e680321f26"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($P{FINAL_DATE})]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="84">
+			<subreport>
+				<reportElement x="0" y="27" width="555" height="57" uuid="ef889188-9d38-4ff2-b301-af72bbb0a793"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{meals})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "meal_detail_subreport.jasper"]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="27" forecolor="#3333FF" backcolor="#99FFFF" uuid="ce0e05c7-b176-47c6-b8cb-aab28d7f46ad"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="20" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{date})]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
