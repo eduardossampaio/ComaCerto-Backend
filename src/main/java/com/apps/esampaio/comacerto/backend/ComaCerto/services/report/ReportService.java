@@ -1,6 +1,7 @@
 package com.apps.esampaio.comacerto.backend.ComaCerto.services.report;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -18,23 +19,23 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 public class ReportService {
 	
-	private String pathToReportPackage;
+	private File pathToReportPackage;
 
 	//Recupera os caminhos para que a classe possa encontrar os relatórios
 	public ReportService() {
 		String path = this.getClass().getClassLoader().getResource("").getPath();
-		this.pathToReportPackage = path + "com/apps/esampaio/comacerto/backend/ComaCerto/services/report/";
-		
+		this.pathToReportPackage = new File("jasper");
 	}
 	
 	public ByteArrayOutputStream generateMealReport(List<Meal> meals,Date initialDate,Date finalDate) throws Exception {
 		
 		List<MealDay> allMealsGrouped = group(meals);
-		JasperReport report = JasperCompileManager.compileReport(pathToReportPackage+"meal.jrxml");
+//		JasperReport report = JasperCompileManager.compileReport(pathToReportPackage+"/meal.jrxml");
+		JasperReport report = JasperCompileManager.compileReport(new File(pathToReportPackage, "meal.jrxml").getAbsolutePath());
 		Map<String,Object> parametros = new HashMap<String,Object>();
 		parametros.put("INITIAL_DATE", initialDate);
 		parametros.put("FINAL_DATE", finalDate);
-		parametros.put("SUBREPORT_DIR", pathToReportPackage);
+		parametros.put("SUBREPORT_DIR", pathToReportPackage.getAbsolutePath()+"/");
 		JasperPrint print = JasperFillManager.fillReport(report, parametros, new JRBeanCollectionDataSource(allMealsGrouped));
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		JasperExportManager.exportReportToPdfStream(print, outputStream);

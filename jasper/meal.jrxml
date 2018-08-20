@@ -4,11 +4,10 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
-		<defaultValueExpression><![CDATA[.]]></defaultValueExpression>
+		<defaultValueExpression><![CDATA["/Users/eduardosoares/coma certo/"]]></defaultValueExpression>
 	</parameter>
 	<parameter name="INITIAL_DATE" class="java.util.Date"/>
 	<parameter name="FINAL_DATE" class="java.util.Date"/>
-	<parameter name="CURRENT_DIR" class="java.lang.String" isForPrompting="false"/>
 	<field name="date" class="java.util.Date"/>
 	<field name="meals" class="java.util.List"/>
 	<title>
