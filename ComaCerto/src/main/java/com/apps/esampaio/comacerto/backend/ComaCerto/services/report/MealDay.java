@@ -8,11 +8,11 @@ import org.apache.commons.lang.time.DateUtils;
 
 import com.apps.esampaio.comacerto.backend.ComaCerto.entities.Meal;
 
-public class MealReport {
+public class MealDay {
 	private Date date;
 	private List<Meal> meals;
 	
-	public MealReport(Date date) {
+	public MealDay(Date date) {
 		super();
 		this.date = date;
 		this.meals = new ArrayList<Meal>();

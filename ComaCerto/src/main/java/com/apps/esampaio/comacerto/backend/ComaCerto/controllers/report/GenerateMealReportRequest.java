@@ -1,24 +1,22 @@
 package com.apps.esampaio.comacerto.backend.ComaCerto.controllers.report;
 
-import java.util.Date;
 import java.util.List;
 
 import com.apps.esampaio.comacerto.backend.ComaCerto.entities.Meal;
 
 public class GenerateMealReportRequest {
-	private Date initialDate;
-	private Date finalDate;
-	private List<Meal> meals;
-	public Date getInitialDate() {
+	private String initialDate;
+	private String finalDate;
+	public String getInitialDate() {
 		return initialDate;
 	}
-	public void setInitialDate(Date initialDate) {
+	public void setInitialDate(String initialDate) {
 		this.initialDate = initialDate;
 	}
-	public Date getFinalDate() {
+	public String getFinalDate() {
 		return finalDate;
 	}
-	public void setFinalDate(Date finalDate) {
+	public void setFinalDate(String finalDate) {
 		this.finalDate = finalDate;
 	}
 	public List<Meal> getMeals() {
@@ -27,6 +25,7 @@ public class GenerateMealReportRequest {
 	public void setMeals(List<Meal> meals) {
 		this.meals = meals;
 	}
+	private List<Meal> meals;
 	
 	
 	

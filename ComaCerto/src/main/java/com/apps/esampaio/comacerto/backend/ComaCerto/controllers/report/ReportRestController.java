@@ -7,35 +7,28 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.apps.esampaio.comacerto.backend.ComaCerto.entities.Greeting;
 import com.apps.esampaio.comacerto.backend.ComaCerto.entities.Meal;
 import com.apps.esampaio.comacerto.backend.ComaCerto.services.report.ReportService;
+import com.apps.esampaio.comacerto.backend.ComaCerto.util.DateUtil;
 
 @RestController
 @RequestMapping("/reports")
 public class ReportRestController {
 	
-	private static Date dateForFormat(String date) throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-		return dateFormat.parse(date);
-	}
-	private static Date hourForFormat(String date) throws ParseException {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
-		return dateFormat.parse(date);
-	}
+	
+	
 	@RequestMapping(path="/meals",method = RequestMethod.POST, produces = "application/pdf")
 	public byte[] generateMealReport(@RequestBody GenerateMealReportRequest request ) throws Exception {
-		
-		ByteArrayOutputStream resultStream =  new ReportService().generateMealReport(request.getMeals(), request.getInitialDate(), request.getFinalDate());
+		System.out.println("Gerando relatórios");
+		Date initialDate = DateUtil.dateForFormat(request.getInitialDate());
+		Date finalDate = DateUtil.dateForFormat(request.getFinalDate());
+		ByteArrayOutputStream resultStream = new ReportService().generateMealReport(request.getMeals(), initialDate, finalDate );
 		return resultStream.toByteArray();
-//		return new Greeting(0,"Deu certo");
 	}
 	
 	@RequestMapping(path="/getMeals",method = RequestMethod.GET)
@@ -45,7 +38,7 @@ public class ReportRestController {
 		//dia 01
 		Meal cafe1 = new Meal();
 		cafe1.setMealType("Café da Manha");
-		cafe1.setHour(hourForFormat("10:00"));
+		cafe1.setHour(DateUtil.hourForFormat("10:00"));
 		cafe1.setFeeling("Feliz");
 		cafe1.setHunger(5);
 		cafe1.setSatiety(5);
@@ -55,7 +48,7 @@ public class ReportRestController {
 		
 		Meal almoco1 = new Meal();
 		almoco1.setMealType("Almoco");
-		almoco1.setHour(hourForFormat("13:00"));
+		almoco1.setHour(DateUtil.hourForFormat("13:00"));
 		almoco1.setFeeling("Pressa");
 		almoco1.setHunger(3);
 		almoco1.setSatiety(4);
@@ -68,7 +61,7 @@ public class ReportRestController {
 		
 		Meal lanche1 = new Meal();
 		lanche1.setMealType("Lanche");
-		lanche1.setHour(hourForFormat("16:00"));
+		lanche1.setHour(DateUtil.hourForFormat("16:00"));
 		lanche1.setFeeling("Anstioso");
 		lanche1.setHunger(1);
 		lanche1.setSatiety(1);
@@ -78,7 +71,7 @@ public class ReportRestController {
 		
 		Meal janta1 = new Meal();
 		janta1.setMealType("Janta");
-		janta1.setHour(hourForFormat("20:00"));
+		janta1.setHour(DateUtil.hourForFormat("20:00"));
 		janta1.setFeeling("Cansado");
 		janta1.setHunger(5);
 		janta1.setSatiety(2);
@@ -89,7 +82,7 @@ public class ReportRestController {
 		//dia 02
 		Meal cafe2 = new Meal();
 		cafe2.setMealType("Café da Manha");
-		cafe2.setHour(hourForFormat("10:00"));
+		cafe2.setHour(DateUtil.hourForFormat("10:00"));
 		cafe2.setFeeling("Feliz");
 		cafe2.setHunger(5);
 		cafe2.setSatiety(5);
@@ -100,7 +93,7 @@ public class ReportRestController {
 		
 		Meal almoco2 = new Meal();
 		almoco2.setMealType("Almoco");
-		almoco2.setHour(hourForFormat("13:00"));
+		almoco2.setHour(DateUtil.hourForFormat("13:00"));
 		almoco2.setFeeling("Ansioso");
 		almoco2.setHunger(3);
 		almoco2.setSatiety(4);
@@ -116,7 +109,7 @@ public class ReportRestController {
 		
 		Meal lanche2 = new Meal();
 		lanche2.setMealType("Lanche");
-		lanche2.setHour(hourForFormat("16:00"));
+		lanche2.setHour(DateUtil.hourForFormat("16:00"));
 		lanche2.setFeeling("Cansado");
 		lanche2.setHunger(1);
 		lanche2.setSatiety(1);
@@ -127,7 +120,7 @@ public class ReportRestController {
 		
 		Meal janta2 = new Meal();
 		janta2.setMealType("Janta");
-		janta2.setHour(hourForFormat("20:00"));
+		janta2.setHour(DateUtil.hourForFormat("20:00"));
 		janta2.setFeeling("Cansado");
 		janta2.setHunger(5);
 		janta2.setSatiety(2);

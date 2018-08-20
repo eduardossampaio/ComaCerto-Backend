@@ -8,9 +8,7 @@ import java.util.List;
 import java.util.Map;
 
 import com.apps.esampaio.comacerto.backend.ComaCerto.entities.Meal;
-import com.itextpdf.text.pdf.codec.Base64.OutputStream;
 
-import net.sf.jasperreports.engine.JRException;
 import net.sf.jasperreports.engine.JasperCompileManager;
 import net.sf.jasperreports.engine.JasperExportManager;
 import net.sf.jasperreports.engine.JasperFillManager;
@@ -22,7 +20,7 @@ public class ReportService {
 	
 	public ByteArrayOutputStream generateMealReport(List<Meal> meals,Date initialDate,Date finalDate) throws Exception {
 		
-		List<MealReport> allMealsGrouped = group(meals);
+		List<MealDay> allMealsGrouped = group(meals);
 		JasperReport report = JasperCompileManager.compileReport("/Users/eduardosoares/coma certo/meal.jrxml");
 		Map<String,Object> parametros = new HashMap<String,Object>();
 		parametros.put("INITIAL_DATE", initialDate);
@@ -31,24 +29,21 @@ public class ReportService {
 		ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 		JasperExportManager.exportReportToPdfStream(print, outputStream);
 		return outputStream;
-//		(print, "/Users/eduardosoares/Documents/teste jasper/out/Relatorio_de_Alimentos.pdf");		
-//		JasperExportManager.exportReportToHtmlFile(print,"/Users/eduardosoares/Documents/teste jasper/out/Relatorio_de_Alimentos.html");
-		
 	}
 
-	private List<MealReport> group(List<Meal> meals) {
-		List<MealReport> allMealsGrouped = new ArrayList<MealReport>();
+	private List<MealDay> group(List<Meal> meals) {
+		List<MealDay> allMealsGrouped = new ArrayList<MealDay>();
 		
 		for (Meal meal : meals) {
 			boolean found = false;
-			for (MealReport mealReport : allMealsGrouped) {
+			for (MealDay mealReport : allMealsGrouped) {
 				if ( mealReport.belongsTo(meal)) {
 					found = true;
 					mealReport.addMeal(meal);
 				}
 			}
 			if( ! found) {
-				MealReport mealReport  = new MealReport(meal.getHour());
+				MealDay mealReport  = new MealDay(meal.getHour());
 				mealReport.addMeal(meal);
 				allMealsGrouped.add(mealReport);
 			}
