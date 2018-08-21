@@ -22,7 +22,7 @@ public class MealDay {
 		meals.add(meal);
 	}
 	public boolean belongsTo(Meal meal) {
-		return DateUtils.isSameDay(date, meal.getHour());
+		return DateUtils.isSameDay(date, meal.getDateAndTime());
 	}
 
 	public List<Meal> getMeals() {

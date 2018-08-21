@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 public class Meal {
 	private String mealType;
-	private Date hour;
+	@JsonFormat(pattern="dd/MM/yyyy HH:mm")
+	private Date dateAndTime;
 	private List<Food> foods;
 	private Integer hunger;
 	private Integer satiety;
@@ -17,10 +20,10 @@ public class Meal {
 		
 	}
 	
-	public Meal(String mealType, Date hour, List<Food> foods, Integer hunger, Integer satiety, String feeling) {
+	public Meal(String mealType, Date dateAndTime, List<Food> foods, Integer hunger, Integer satiety, String feeling) {
 		super();
 		this.mealType = mealType;
-		this.hour = hour;
+		this.dateAndTime = dateAndTime;
 		this.foods = foods;
 		this.hunger = hunger;
 		this.satiety = satiety;
@@ -39,12 +42,15 @@ public class Meal {
 	public void setMealType(String mealType) {
 		this.mealType = mealType;
 	}
-	public void setHour(Date hour) {
-		this.hour = hour;
+	
+	public Date getDateAndTime() {
+		return dateAndTime;
 	}
-	public Date getHour() {
-		return hour;
+
+	public void setDateAndTime(Date dateAndTime) {
+		this.dateAndTime = dateAndTime;
 	}
+
 	public List<Food> getFoods() {
 		return foods;
 	}

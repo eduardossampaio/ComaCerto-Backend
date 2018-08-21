@@ -38,7 +38,7 @@ public class ReportRestController {
 		//dia 01
 		Meal cafe1 = new Meal();
 		cafe1.setMealType("Café da Manha");
-		cafe1.setHour(DateUtil.hourForFormat("10:00"));
+		cafe1.setDateAndTime(DateUtil.hourForFormat("10:00"));
 		cafe1.setFeeling("Feliz");
 		cafe1.setHunger(5);
 		cafe1.setSatiety(5);
@@ -48,7 +48,7 @@ public class ReportRestController {
 		
 		Meal almoco1 = new Meal();
 		almoco1.setMealType("Almoco");
-		almoco1.setHour(DateUtil.hourForFormat("13:00"));
+		almoco1.setDateAndTime(DateUtil.hourForFormat("13:00"));
 		almoco1.setFeeling("Pressa");
 		almoco1.setHunger(3);
 		almoco1.setSatiety(4);
@@ -58,10 +58,10 @@ public class ReportRestController {
 		almoco1.addFood("Macarrão",3);
 		almoco1.addFood("Ovo",3);
 		
-		
+		//dd/MM/yyyy HH:mm
 		Meal lanche1 = new Meal();
 		lanche1.setMealType("Lanche");
-		lanche1.setHour(DateUtil.hourForFormat("16:00"));
+		lanche1.setDateAndTime(DateUtil.hourForFormat("16:00"));
 		lanche1.setFeeling("Anstioso");
 		lanche1.setHunger(1);
 		lanche1.setSatiety(1);
@@ -71,7 +71,7 @@ public class ReportRestController {
 		
 		Meal janta1 = new Meal();
 		janta1.setMealType("Janta");
-		janta1.setHour(DateUtil.hourForFormat("20:00"));
+		janta1.setDateAndTime(DateUtil.hourForFormat("20:00"));
 		janta1.setFeeling("Cansado");
 		janta1.setHunger(5);
 		janta1.setSatiety(2);
@@ -82,7 +82,7 @@ public class ReportRestController {
 		//dia 02
 		Meal cafe2 = new Meal();
 		cafe2.setMealType("Café da Manha");
-		cafe2.setHour(DateUtil.hourForFormat("10:00"));
+		cafe2.setDateAndTime(DateUtil.hourForFormat("10:00"));
 		cafe2.setFeeling("Feliz");
 		cafe2.setHunger(5);
 		cafe2.setSatiety(5);
@@ -93,7 +93,7 @@ public class ReportRestController {
 		
 		Meal almoco2 = new Meal();
 		almoco2.setMealType("Almoco");
-		almoco2.setHour(DateUtil.hourForFormat("13:00"));
+		almoco2.setDateAndTime(DateUtil.hourForFormat("13:00"));
 		almoco2.setFeeling("Ansioso");
 		almoco2.setHunger(3);
 		almoco2.setSatiety(4);
@@ -109,7 +109,7 @@ public class ReportRestController {
 		
 		Meal lanche2 = new Meal();
 		lanche2.setMealType("Lanche");
-		lanche2.setHour(DateUtil.hourForFormat("16:00"));
+		lanche2.setDateAndTime(DateUtil.hourForFormat("16:00"));
 		lanche2.setFeeling("Cansado");
 		lanche2.setHunger(1);
 		lanche2.setSatiety(1);
@@ -120,7 +120,7 @@ public class ReportRestController {
 		
 		Meal janta2 = new Meal();
 		janta2.setMealType("Janta");
-		janta2.setHour(DateUtil.hourForFormat("20:00"));
+		janta2.setDateAndTime(DateUtil.hourForFormat("20:00"));
 		janta2.setFeeling("Cansado");
 		janta2.setHunger(5);
 		janta2.setSatiety(2);

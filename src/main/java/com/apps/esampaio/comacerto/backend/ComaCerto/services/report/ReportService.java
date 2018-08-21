@@ -54,7 +54,7 @@ public class ReportService {
 				}
 			}
 			if( ! found) {
-				MealDay mealReport  = new MealDay(meal.getHour());
+				MealDay mealReport  = new MealDay(meal.getDateAndTime());
 				mealReport.addMeal(meal);
 				allMealsGrouped.add(mealReport);
 			}

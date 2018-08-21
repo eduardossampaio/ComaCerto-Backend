@@ -18,8 +18,8 @@
 	<field name="foods" class="java.util.List">
 		<fieldDescription><![CDATA[foods]]></fieldDescription>
 	</field>
-	<field name="hour" class="java.util.Date">
-		<fieldDescription><![CDATA[hour]]></fieldDescription>
+	<field name="dateAndTime" class="java.util.Date">
+		<fieldDescription><![CDATA[dateAndTime]]></fieldDescription>
 	</field>
 	<field name="hunger" class="java.lang.Integer">
 		<fieldDescription><![CDATA[hunger]]></fieldDescription>
@@ -47,7 +47,7 @@
 			<textField>
 				<reportElement x="146" y="40" width="145" height="20" uuid="65f6c6d2-adbd-4917-af0d-dba92042b8d2"/>
 				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{hour})]]></textFieldExpression>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{dateAndTime})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="60" width="146" height="20" uuid="20723010-0ea7-41b4-8cc7-7d810baf028e"/>
