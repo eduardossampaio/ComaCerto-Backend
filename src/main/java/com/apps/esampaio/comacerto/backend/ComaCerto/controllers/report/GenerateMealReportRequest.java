@@ -7,6 +7,8 @@ import com.apps.esampaio.comacerto.backend.ComaCerto.entities.Meal;
 public class GenerateMealReportRequest {
 	private String initialDate;
 	private String finalDate;
+	private List<Meal> meals;
+	
 	public String getInitialDate() {
 		return initialDate;
 	}
@@ -25,7 +27,7 @@ public class GenerateMealReportRequest {
 	public void setMeals(List<Meal> meals) {
 		this.meals = meals;
 	}
-	private List<Meal> meals;
+	
 	
 	
 	

@@ -11,16 +11,16 @@ public class Meal {
 	@JsonFormat(pattern="dd/MM/yyyy HH:mm")
 	private Date dateAndTime;
 	private List<Food> foods;
-	private Integer hunger;
-	private Integer satiety;
+	private String hunger;
+	private String satiety;
 	private String feeling;
-	
+	private String whatWasDoing;
 	
 	public Meal() {
 		
 	}
 	
-	public Meal(String mealType, Date dateAndTime, List<Food> foods, Integer hunger, Integer satiety, String feeling) {
+	public Meal(String mealType, Date dateAndTime, List<Food> foods, String hunger, String satiety, String feeling) {
 		super();
 		this.mealType = mealType;
 		this.dateAndTime = dateAndTime;
@@ -57,23 +57,36 @@ public class Meal {
 	public void setFoods(List<Food> foods) {
 		this.foods = foods;
 	}
-	public Integer getHunger() {
+	
+	public String getHunger() {
 		return hunger;
 	}
-	public void setHunger(Integer hunger) {
+
+	public void setHunger(String hunger) {
 		this.hunger = hunger;
 	}
-	public Integer getSatiety() {
+
+	public String getSatiety() {
 		return satiety;
 	}
-	public void setSatiety(Integer satiety) {
+
+	public void setSatiety(String satiety) {
 		this.satiety = satiety;
 	}
+
 	public String getFeeling() {
 		return feeling;
 	}
 	public void setFeeling(String feeling) {
 		this.feeling = feeling;
+	}
+
+	public String getWhatWasDoing() {
+		return whatWasDoing;
+	}
+
+	public void setWhatWasDoing(String whatWasDoing) {
+		this.whatWasDoing = whatWasDoing;
 	}
 	
 	

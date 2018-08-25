@@ -20,17 +20,15 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 public class ReportService {
 	
 	private File pathToReportPackage;
-
+	
 	//Recupera os caminhos para que a classe possa encontrar os relatórios
-	public ReportService() {
-		String path = this.getClass().getClassLoader().getResource("").getPath();
-		this.pathToReportPackage = new File("jasper");
+	public ReportService(String version) {
+		this.pathToReportPackage = new File("jasper/"+version);
 	}
 	
 	public ByteArrayOutputStream generateMealReport(List<Meal> meals,Date initialDate,Date finalDate) throws Exception {
 		
 		List<MealDay> allMealsGrouped = group(meals);
-//		JasperReport report = JasperCompileManager.compileReport(pathToReportPackage+"/meal.jrxml");
 		JasperReport report = JasperCompileManager.compileReport(new File(pathToReportPackage, "meal.jrxml").getAbsolutePath());
 		Map<String,Object> parametros = new HashMap<String,Object>();
 		parametros.put("INITIAL_DATE", initialDate);

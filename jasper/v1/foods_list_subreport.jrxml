@@ -14,15 +14,19 @@
 		<fieldDescription><![CDATA[portion]]></fieldDescription>
 	</field>
 	<columnHeader>
-		<band height="20">
+		<band height="21">
 			<staticText>
 				<reportElement x="0" y="0" width="143" height="20" uuid="e3cb8bce-cd58-4c20-815f-039d0fce1340"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<text><![CDATA[Alimento]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="143" y="0" width="143" height="20" uuid="4e34f75d-4739-4f31-a793-0411baf01cf6"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<text><![CDATA[Porção]]></text>
 			</staticText>
 		</band>
@@ -31,12 +35,16 @@
 		<band height="20" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="0" width="143" height="20" uuid="49f5b864-f178-4a47-9f9f-7e06ddae6140"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="143" y="0" width="143" height="20" uuid="9efedada-fa41-411f-9d55-245716ab247b"/>
-				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<textFieldExpression><![CDATA[$F{portion}]]></textFieldExpression>
 			</textField>
 		</band>

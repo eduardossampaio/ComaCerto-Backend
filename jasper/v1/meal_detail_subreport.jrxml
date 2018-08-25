@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="meal_detail_subreport" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="01d949e5-0499-4ccc-a6f8-55f422ef48eb">
-	<property name="ireport.zoom" value="3.0"/>
-	<property name="ireport.x" value="51"/>
+	<property name="ireport.zoom" value="2.0"/>
+	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
 	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
 		<defaultValueExpression><![CDATA[]]></defaultValueExpression>
@@ -21,17 +21,18 @@
 	<field name="dateAndTime" class="java.util.Date">
 		<fieldDescription><![CDATA[dateAndTime]]></fieldDescription>
 	</field>
-	<field name="hunger" class="java.lang.Integer">
+	<field name="hunger" class="java.lang.String">
 		<fieldDescription><![CDATA[hunger]]></fieldDescription>
 	</field>
 	<field name="mealType" class="java.lang.String">
 		<fieldDescription><![CDATA[mealType]]></fieldDescription>
 	</field>
-	<field name="satiety" class="java.lang.Integer">
+	<field name="satiety" class="java.lang.String">
 		<fieldDescription><![CDATA[satiety]]></fieldDescription>
 	</field>
+	<field name="whatWasDoing" class="java.lang.String"/>
 	<detail>
-		<band height="120" splitType="Stretch">
+		<band height="206" splitType="Stretch">
 			<textField>
 				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#3333FF" backcolor="#99FFFF" uuid="e902c752-4b0a-478d-83fd-fbabf38428bf"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
@@ -41,46 +42,54 @@
 			</textField>
 			<staticText>
 				<reportElement x="0" y="40" width="146" height="20" uuid="71d59770-78a0-4fcf-8af4-da926bac1b16"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<text><![CDATA[Hora:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="146" y="40" width="145" height="20" uuid="65f6c6d2-adbd-4917-af0d-dba92042b8d2"/>
-				<textElement textAlignment="Center"/>
-				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{dateAndTime})]]></textFieldExpression>
+				<textElement textAlignment="Left"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("HH:mm").format($F{dateAndTime})]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="60" width="146" height="20" uuid="20723010-0ea7-41b4-8cc7-7d810baf028e"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left">
+					<paragraph lineSpacing="Single" leftIndent="20"/>
+				</textElement>
 				<text><![CDATA[Sentimento:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="146" y="60" width="145" height="20" uuid="a69a92f3-29bd-46db-aa45-4c6fa327631a"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{feeling}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="80" width="146" height="20" uuid="f9cf318a-e3f4-49a1-b2d2-1c435c8bb7c6"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<text><![CDATA[Fome:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="146" y="80" width="145" height="20" uuid="89032b4d-a181-49f3-9f21-2cd33998d968"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{hunger}]]></textFieldExpression>
 			</textField>
 			<staticText>
 				<reportElement x="0" y="100" width="146" height="20" uuid="da0008ca-7faa-4f53-a843-94d95c062e55"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left">
+					<paragraph leftIndent="20"/>
+				</textElement>
 				<text><![CDATA[Saciedade:]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="146" y="100" width="145" height="20" uuid="44522e94-6141-488a-9cb5-734bae295216"/>
-				<textElement textAlignment="Center"/>
+				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[$F{satiety}]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement x="291" y="40" width="264" height="80" uuid="81c19bcb-339a-424f-bb37-e8b5342e68de"/>
+				<reportElement x="291" y="40" width="264" height="166" uuid="81c19bcb-339a-424f-bb37-e8b5342e68de"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{foods})]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "foods_list_subreport.jasper"]]></subreportExpression>
 			</subreport>
@@ -98,6 +107,21 @@
 				</textElement>
 				<text><![CDATA[Alimentos]]></text>
 			</staticText>
+			<staticText>
+				<reportElement x="0" y="120" width="291" height="20" uuid="5194b15a-380a-4027-ac42-01e729a3f074"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<text><![CDATA[O que estava fazendo?]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="1" y="140" width="290" height="66" uuid="9c0d9087-cd90-4895-a510-a6c94472313e"/>
+				<textElement textAlignment="Left" verticalAlignment="Top">
+					<font isStrikeThrough="false"/>
+					<paragraph leftIndent="20"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{whatWasDoing}) ? $F{whatWasDoing} : "Não informado"]]></textFieldExpression>
+			</textField>
 		</band>
 	</detail>
 </jasperReport>
