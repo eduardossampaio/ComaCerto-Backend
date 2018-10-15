@@ -2,7 +2,7 @@
 
 ### Sobre o aplicativo
 
-Este aplicativo foi desenvolvido inicialmente como projeto final do prograna **iOS Developer Nanodegree** da Udacity, feito em parceiria com uma psicóloga, que acompanhou a concepção deste aplicativp
+Este aplicativo foi desenvolvido inicialmente como projeto final do prograna **iOS Developer Nanodegree** da Udacity, feito em parceiria com uma psicóloga, que acompanhou a concepção deste aplicativo
 
 ### Icones
 

@@ -10,6 +10,7 @@ Dessa forma, pacientes com transtornos alimentares, podem usar essa ferramenta p
 Os ganhos primários do uso do app são:
 
 1. aumento da consciência sobre o comportamento: Grande parte dos sujeitos não se atentam a forma como comem, durante o registro das refeições o usuário vai precisar refletir para responder.
+   
 2. mudança de regras sobre a alimentação: Percebendo o próprio comportamento alimentar, e com o auxílio do profissional, ele vai perceber os erros que tem cometido durante a refeição, relacionados a:
    
     * a)frequencia das refeições 
