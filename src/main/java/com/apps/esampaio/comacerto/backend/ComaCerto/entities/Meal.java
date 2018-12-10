@@ -15,22 +15,22 @@ public class Meal {
 	private String satiety;
 	private String feeling;
 	private String whatWasDoing;
+	private Integer waterCups;
 	
 	public Meal() {
 		
 	}
-	
-	public Meal(String mealType, Date dateAndTime, List<Food> foods, String hunger, String satiety, String feeling) {
-		super();
-		this.mealType = mealType;
-		this.dateAndTime = dateAndTime;
-		this.foods = foods;
-		this.hunger = hunger;
-		this.satiety = satiety;
-		this.feeling = feeling;
-	}
-	
-	public void addFood(String foodName,int portion) {
+
+
+    public Integer getWaterCups() {
+        return waterCups;
+    }
+
+    public void setWaterCups(Integer waterCups) {
+        this.waterCups = waterCups;
+    }
+
+    public void addFood(String foodName, int portion) {
 		if ( foods ==null) {
 			foods = new ArrayList<Food>();
 		}

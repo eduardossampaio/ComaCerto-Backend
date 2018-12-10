@@ -25,6 +25,15 @@ public class ReportRestController {
 		ByteArrayOutputStream resultStream = new ReportService("v1").generateMealReport(request.getMeals(), initialDate, finalDate );
 		return resultStream.toByteArray();
 	}
-	
-	
+
+	@RequestMapping(path="/meals",method = RequestMethod.POST, produces = "application/pdf", headers = { "version=v2" })
+	public byte[] generateMealReportV2(@RequestBody GenerateMealReportRequest request ) throws Exception {
+		System.out.println("Gerando relatórios v2");
+		Date initialDate = DateUtil.dateForFormat(request.getInitialDate());
+		Date finalDate = DateUtil.dateForFormat(request.getFinalDate());
+		ByteArrayOutputStream resultStream = new ReportService("v2").generateMealReport(request.getMeals(), initialDate, finalDate );
+		return resultStream.toByteArray();
+	}
+
+
 } 
