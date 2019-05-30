@@ -109,14 +109,14 @@
 				<text><![CDATA[Alimentos]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="0" y="140" width="291" height="20" uuid="5194b15a-380a-4027-ac42-01e729a3f074"/>
+				<reportElement x="0" y="120" width="291" height="20" uuid="5194b15a-380a-4027-ac42-01e729a3f074"/>
 				<textElement textAlignment="Left" verticalAlignment="Middle">
 					<paragraph leftIndent="20"/>
 				</textElement>
 				<text><![CDATA[O que estava fazendo?]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="1" y="160" width="290" height="55" uuid="9c0d9087-cd90-4895-a510-a6c94472313e"/>
+				<reportElement x="1" y="140" width="290" height="75" uuid="9c0d9087-cd90-4895-a510-a6c94472313e"/>
 				<textElement textAlignment="Left" verticalAlignment="Top">
 					<font isStrikeThrough="false"/>
 					<paragraph leftIndent="20"/>
@@ -124,14 +124,14 @@
 				<textFieldExpression><![CDATA[($F{whatWasDoing}) ? $F{whatWasDoing} : "Não informado"]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="120" width="146" height="20" uuid="48af7782-44e1-4b6f-a5c6-6e47ad27be6c"/>
+				<reportElement x="0" y="120" width="146" height="0" uuid="48af7782-44e1-4b6f-a5c6-6e47ad27be6c"/>
 				<textElement>
 					<paragraph leftIndent="20"/>
 				</textElement>
 				<text><![CDATA[Copos de água:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="146" y="120" width="145" height="20" uuid="a4d0ea2e-dfe2-4649-92b7-81bbfb3c62f7"/>
+				<reportElement x="146" y="120" width="145" height="0" uuid="a4d0ea2e-dfe2-4649-92b7-81bbfb3c62f7"/>
 				<textElement textAlignment="Left"/>
 				<textFieldExpression><![CDATA[($F{waterCups}) ? $F{waterCups} : "0"]]></textFieldExpression>
 			</textField>
