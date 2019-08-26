@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="water_list_subreport" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="fc5f4d7f-681f-4db0-97ad-1c72f302edfe">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<field name="dateAndTime" class="java.util.Date"/>
+	<field name="quantity" class="java.lang.Integer"/>
+	<columnHeader>
+		<band height="40" splitType="Stretch">
+			<staticText>
+				<reportElement mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#FFFFFF" backcolor="#447389" uuid="b2bcc952-cf5c-44b2-ba10-08ff55f3fd90"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="15" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Liquidos consumidos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="20" width="285" height="20" uuid="bf955e52-aec3-45d5-8732-4022e9fc98c7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Horário]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="285" y="20" width="270" height="20" uuid="199ff9ff-c371-4816-afa6-22c771aba615"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Quantidade consumida]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="285" height="20" uuid="d10e4883-fdab-4f71-b262-5f6a8cd0485b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("HH:mm").format($F{dateAndTime})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement mode="Transparent" x="285" y="0" width="270" height="20" backcolor="#FFFFFF" uuid="fa8a20ec-82ef-4435-8c4f-4bf0b9dfd8c9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
