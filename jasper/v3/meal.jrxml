@@ -46,7 +46,7 @@
 	<detail>
 		<band height="146">
 			<subreport>
-				<reportElement x="0" y="89" width="555" height="57" isRemoveLineWhenBlank="true" uuid="ef889188-9d38-4ff2-b301-af72bbb0a793"/>
+				<reportElement positionType="Float" x="0" y="89" width="555" height="57" isRemoveLineWhenBlank="true" uuid="ef889188-9d38-4ff2-b301-af72bbb0a793"/>
 				<subreportParameter name="SUBREPORT_DIR">
 					<subreportParameterExpression><![CDATA[$P{SUBREPORT_DIR}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -61,7 +61,7 @@
 				<textFieldExpression><![CDATA[new SimpleDateFormat("dd/MM/yyyy").format($F{date})]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement x="0" y="27" width="555" height="62" isRemoveLineWhenBlank="true" uuid="8e39f69e-cf7c-4dea-a3a9-18a278b660a1"/>
+				<reportElement positionType="Float" x="0" y="27" width="555" height="62" isRemoveLineWhenBlank="true" uuid="8e39f69e-cf7c-4dea-a3a9-18a278b660a1"/>
 				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{waters})]]></dataSourceExpression>
 				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "water_list_subreport.jasper"]]></subreportExpression>
 			</subreport>
