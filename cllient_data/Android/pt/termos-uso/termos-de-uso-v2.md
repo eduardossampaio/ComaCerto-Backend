@@ -1,4 +1,5 @@
 **Política de privacidade**
+
 Este SERVIÇO é prestado sem custos e destina-se a ser utilizado no estado em que se encontra.
 
 Esta página é usada para informar os visitantes sobre minhas políticas de coleta, uso e divulgação de Informações Pessoais, caso alguém decida usar meu Serviço.
@@ -33,7 +34,7 @@ Este Serviço não usa esses “cookies” explicitamente. No entanto, o aplicat
 
 Este serviço pode conter links para outros sites. Se você clicar em um link de terceiros, você será direcionado a esse site. Observe que esses sites externos não são operados por mim. Portanto, eu recomendo fortemente que você analise a Política de Privacidade desses sites. Não tenho controle e não assumo qualquer responsabilidade pelo conteúdo, políticas de privacidade ou práticas de quaisquer sites ou serviços de terceiros.
 
-** Mudanças nesta Política de Privacidade **
+**Mudanças nesta Política de Privacidade**
 
 Posso atualizar nossa Política de Privacidade de tempos em tempos. Portanto, recomendamos que você revise esta página periodicamente para verificar quaisquer alterações. Irei notificá-lo de quaisquer alterações, postando a nova Política de Privacidade nesta página.
 
